@@ -32,11 +32,12 @@ class MainApp extends StatelessWidget {
                     shape: BoxShape.circle,
                     border: Border.all(color: Colors.grey, width: 2),
                   ),
-                  child: Icon(
-                    Icons.arrow_back_ios_new,
-                    color: Colors.black,
-                    size: 20,
-                  ),
+                  child: Align(
+                    child: Image.asset(
+                      'assets/icons/arrow_left.png',
+                      fit: BoxFit.fitHeight,
+                    ),
+                  )
                 ),
               ),
             ),
@@ -59,94 +60,96 @@ class MainApp extends StatelessWidget {
               ),
             ],
           ),
-          body: SingleChildScrollView(
+          body: Column(
+            children: [
+              Expanded(
+                //: EdgeInsets.fromLTRB(15, 0, 15, 0),
+                child: ListView(
 
-            child: Padding(
-              padding: EdgeInsets.fromLTRB(15, 0, 15, 0),
-              child: Column(
-                children: [
-                  TitleBox(),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      RichText(
-                        text: TextSpan(
-                          children: [
-                            TextSpan(
-                              text: "452",
-                              style: TextStyle(
-                                fontSize: 62,
-                                color: Colors.black,
+                  children: [
+                    TitleBox(),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        RichText(
+                          text: TextSpan(
+                            children: [
+                              TextSpan(
+                                text: "452",
+                                style: TextStyle(
+                                  fontSize: 62,
+                                  color: Colors.black,
+                                ),
                               ),
-                            ),
-                            TextSpan(
-                              text: "kcal",
-                              style: TextStyle(
-                                fontSize: 40,
-                                color: Colors.black,
+                              TextSpan(
+                                text: "kcal",
+                                style: TextStyle(
+                                  fontSize: 40,
+                                  color: Colors.black,
+                                ),
                               ),
-                            ),
-                          ],
+                            ],
 
+                          ),
                         ),
-                      ),
-                      Container(
-                        height: 40,
-                        width: 100,
-                        decoration: BoxDecoration(
-                          color: Colors.green,
-                          borderRadius: BorderRadius.circular(20)
-                        ),
-                        child: Center(
-                          child: Text(
-                            "Normal",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 18,
+                        Container(
+                          height: 40,
+                          width: 100,
+                          decoration: BoxDecoration(
+                            color: Colors.green,
+                            borderRadius: BorderRadius.circular(20)
+                          ),
+                          child: Center(
+                            child: Text(
+                              "Normal",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 18,
+                              ),
                             ),
                           ),
                         ),
-                      ),
 
-                    ],
-                  ),
-                  SizedBox(height: 15,),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      NutritionalBox(color: Colors.purpleAccent, name: "Protein", maxVal: 80, val: 13),
-                      NutritionalBox(color: Colors.orange, name: "Fat", maxVal: 60, val: 20),
-                      NutritionalBox(color: Colors.black87, name: "Carbs", maxVal: 200, val: 19),
-                    ],
-                  ),
-                  SizedBox(height: 25,),
+                      ],
+                    ),
+                    SizedBox(height: 15,),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        NutritionalBox(color: Colors.purple, name: "Protein", maxVal: 80, val: 13),
+                        NutritionalBox(color: Colors.orange, name: "Fat", maxVal: 60, val: 20),
+                        NutritionalBox(color: Colors.black87, name: "Carbs", maxVal: 200, val: 19),
+                      ],
+                    ),
+                    SizedBox(height: 25,),
 
-                  Column(
-                    children: [
-                      FoodBox(name: "Fried eggs", kcal: '378', protein: '12', fat: '17', carbs: '17', weight: '100g',),
-                      SizedBox(height: 15,),
-                      FoodBox(name: "Mug of coffee", kcal: '74', protein: '1', fat: '3', carbs: '2', weight: '450ml',),
-                      SizedBox(height: 15,),
-                      FoodBox(name: "Fried eggs", kcal: '378', protein: '12', fat: '17', carbs: '17', weight: '100g',),
-                      SizedBox(height: 15,),
-                      FoodBox(name: "Mug of coffee", kcal: '74', protein: '1', fat: '3', carbs: '2', weight: '450ml',),
-                      SizedBox(height: 15,),
-                      FoodBox(name: "Fried eggs", kcal: '378', protein: '12', fat: '17', carbs: '17', weight: '100g',),
-                      SizedBox(height: 15,),
-                      FoodBox(name: "Mug of coffee", kcal: '74', protein: '1', fat: '3', carbs: '2', weight: '450ml',),
-                      SizedBox(height: 15,),
-                      FoodBox(name: "Fried eggs", kcal: '378', protein: '12', fat: '17', carbs: '17', weight: '100g',),
-                      SizedBox(height: 15,),
-                      FoodBox(name: "Mug of coffee", kcal: '74', protein: '1', fat: '3', carbs: '2', weight: '450ml',),
-                      SizedBox(height: 15,),
+                    Column(
+                      children: [
+                        FoodBox(name: "Fried eggs", kcal: '378', protein: '12', fat: '17', carbs: '17', weight: '100g',),
+                        SizedBox(height: 15,),
+                        FoodBox(name: "Mug of coffee", kcal: '74', protein: '1', fat: '3', carbs: '2', weight: '450ml',),
+                        SizedBox(height: 15,),
+                        FoodBox(name: "Fried eggs", kcal: '378', protein: '12', fat: '17', carbs: '17', weight: '100g',),
+                        SizedBox(height: 15,),
+                        FoodBox(name: "Mug of coffee", kcal: '74', protein: '1', fat: '3', carbs: '2', weight: '450ml',),
+                        SizedBox(height: 15,),
+                        FoodBox(name: "Fried eggs", kcal: '378', protein: '12', fat: '17', carbs: '17', weight: '100g',),
+                        SizedBox(height: 15,),
+                        FoodBox(name: "Mug of coffee", kcal: '74', protein: '1', fat: '3', carbs: '2', weight: '450ml',),
+                        SizedBox(height: 15,),
+                        FoodBox(name: "Fried eggs", kcal: '378', protein: '12', fat: '17', carbs: '17', weight: '100g',),
+                        SizedBox(height: 15,),
+                        FoodBox(name: "Mug of coffee", kcal: '74', protein: '1', fat: '3', carbs: '2', weight: '450ml',),
+                        SizedBox(height: 15,),
 
-                    ],
-                  ),
-                  SizedBox(height: 15,)
-                ],
+                      ],
+                    ),
+                    SizedBox(height: 15,)
+                  ],
+                ),
               ),
-            ),
+            ]
           )
         ),
       ),

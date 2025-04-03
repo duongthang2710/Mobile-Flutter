@@ -79,7 +79,7 @@ class FoodBox extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              NutrientWeight(name: "Protein", weight: protein, color: Colors.purpleAccent,),
+              NutrientWeight(name: "Protein", weight: protein, color: Colors.purple,),
               NutrientWeight(name: "Fat", weight: fat, color: Colors.orange,),
               NutrientWeight(name: "Carbs", weight: carbs, color: Colors.black87,),
             ],
